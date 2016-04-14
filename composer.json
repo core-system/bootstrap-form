@@ -1,0 +1,23 @@
+{
+    "name": "core-system/bootstrap-form",
+    "description": "Laravel Collective 5 based Twitter Bootstrap 3 Form service.",
+    "type": "package",
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Martin Hrášek",
+            "email": "martin@hrasek.email"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.5.9",
+        "laravel/framework": "5.2.*",
+        "laravelcollective/html": "~5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\BootstrapForm\\": "src/"
+        }
+    }
+}
