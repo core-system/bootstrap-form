@@ -22,7 +22,7 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
      */
     public function openGroup($name, $label = null, $options = array())
     {
-        $options = $this->appendClassToOptions(Config::get('form-builder.control-class'), $options);
+        $options = $this->appendClassToOptions(Config::get('form-builder.group-class'), $options);
 
         $this->groupStack[] = $name;
 
