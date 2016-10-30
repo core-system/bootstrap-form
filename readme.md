@@ -75,7 +75,7 @@ and following line to `aliases` key to register Laravel Collective form facade
 
 > If you need you can config control and error class publish vendor config file
 
-    $ php artisan vendor:pulish --provider="Core\BootstrapForm\BootstrapFormServiceProvider" --tag="config"
+    $ php artisan vendor:publish --provider="Core\BootstrapForm\BootstrapFormServiceProvider" --tag="config"
 
 ## Usage
 
