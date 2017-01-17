@@ -52,7 +52,7 @@ Open `composer.json` file located in your project folder and add following lines
 ```json
 {
     "require": {
-        "core-system/bootstrap-form": ">=1.0.0"
+        "core-system/bootstrap-form": "^1.0.0"
     }
 }
 ```
