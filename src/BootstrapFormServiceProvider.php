@@ -35,7 +35,7 @@ class BootstrapFormServiceProvider extends HtmlServiceProvider
                 $app['html'],
                 $app['url'],
                 $app['view'],
-                $app['session.store']->getToken()
+                $app['session.store']->token()
             );
             // Return session store
             return $form->setSessionStore($app['session.store']);

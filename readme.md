@@ -3,9 +3,9 @@
 [![Packagist](https://img.shields.io/packagist/l/core-system/bootstrap-form.svg?maxAge=2592000)](https://packagist.org/packages/core-system/bootstrap-form)
 [![GitHub release](https://img.shields.io/github/release/core-system/bootstrap-form.svg?maxAge=2592000)](https://packagist.org/packages/core-system/bootstrap-form)
 
-This is a standalone part of `core-system` packages for Laravel 5.2 Framework. 
+This is a standalone part of `core-system` packages for Laravel 5 Framework. 
 
-> [CORE-SYSTEM](http://www.core-system.cz) is Laravel 5.2 based web CMS application 
+> [CORE-SYSTEM](http://www.core-system.cz) is Laravel 5 based web CMS application 
 
 CORE-SYSTEM Bootstrap Form contains `laravel-collective/html` extension for simple Twitter Bootstrap 3 form generation and and request validation error handling.
  
@@ -26,7 +26,7 @@ This package uses to installing dependencies `composer` and `bower` component
 ### Composer
 
 - "php": ">=5.5.9"
-- "laravel/laravel": "5.2.*"
+- "laravel/laravel": "~5.0"
 - "laravelcollective/html": "~5.0"
 
 ### Bower
