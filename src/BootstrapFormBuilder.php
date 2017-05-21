@@ -238,6 +238,21 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
     }
 
     /**
+     * Create a submit button element.
+     *
+     * @param  string $value
+     * @param  array  $options
+     *
+     * @return \Illuminate\Support\HtmlString
+     */
+    public function submit($value = null, $options = [])
+    {
+        $options = $this->appendClassToOptions(Config::get('form-builder.submit-class'), $options);
+
+        return $this->button($value, $options);
+    }
+
+    /**
      * Append the class to the given options array
      *
      * @param  string  $class
