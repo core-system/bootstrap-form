@@ -70,6 +70,7 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
      *
      * @param  string  $name
      * @param  array   $list
+     * @param  string  $selected
      * @param  string  $selectAttributes
      * @param  array   $optionsAttributes
      * @return string
