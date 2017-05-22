@@ -71,14 +71,20 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
      * @param  string  $name
      * @param  array   $list
      * @param  string  $selected
-     * @param  array   $options
+     * @param  string  $selectAttributes
+     * @param  array   $optionsAttributes
      * @return string
      */
-    public function select($name, $list = array(), $selected = null, $options = array())
-    {
+    public function select(
+        $name,
+        $list = [],
+        $selected = null,
+        array $selectAttributes = [],
+        array $optionsAttributes = []
+    ) {
         $options = $this->appendClassToOptions(Config::get('form-builder.control-class'), $options);
 
-        return parent::select($name, $list, $selected, $options);
+        return parent::select($name, $list, $selected, $selectAttributes, $optionsAttributes);
     }
 
     /**
@@ -230,6 +236,22 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
     public function plainTextarea($name, $value = null, $options = array())
     {
         return parent::textarea($name, $value, $options);
+    }
+
+    /**
+     * Create a submit button element.
+     *
+     * @param  string $value
+     * @param  array  $options
+     *
+     * @return \Illuminate\Support\HtmlString
+     */
+    public function submit($value = null, $options = [])
+    {
+        $options['type'] = 'submit';
+        $options = $this->appendClassToOptions(Config::get('form-builder.submit-class'), $options);
+
+        return $this->button($value, $options);
     }
 
     /**
