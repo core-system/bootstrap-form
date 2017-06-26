@@ -109,7 +109,7 @@ Form::input(string $type, string $name, mixed $value = null, array $options = []
 > create `<input>` field
 
 ```php
-Form::select(string $name, array $list = [], mixed $selected, array $options = [])
+Form::select(string $name, array $list = [], mixed $selected, array $selectAttributes = [], array $optionsAttributes = [])
 ```
 > create `<select>` field
 
