@@ -119,7 +119,7 @@ Form::plainInput(string $type, string $name, mixed $value = null, array $options
 > create plain `<input>` field
 
 ```php
-Form::plainSelect(string $name, array $list = [], mixed $selected, array $options = [])
+Form::plainSelect(string $name, array $list = [], mixed $selected, array $selectAttributes = [], array $optionsAttributes = [])
 ```
 > create plain `<select>` field
 
