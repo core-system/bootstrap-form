@@ -1,6 +1,4 @@
-<?php
-
-namespace Core\BootstrapForm;
+<?php namespace Core\BootstrapForm;
 
 use Collective\Html\HtmlServiceProvider;
 

@@ -71,7 +71,7 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
      * @param  string  $name
      * @param  array   $list
      * @param  string  $selected
-     * @param  string  $selectAttributes
+     * @param  array   $selectAttributes
      * @param  array   $optionsAttributes
      * @return string
      */
@@ -82,7 +82,7 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
         array $selectAttributes = [],
         array $optionsAttributes = []
     ) {
-        $options = $this->appendClassToOptions(Config::get('form-builder.control-class'), $options);
+        $selectAttributes = $this->appendClassToOptions(Config::get('form-builder.control-class'), $selectAttributes);
 
         return parent::select($name, $list, $selected, $selectAttributes, $optionsAttributes);
     }
