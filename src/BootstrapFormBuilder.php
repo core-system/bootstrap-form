@@ -104,15 +104,16 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
     /**
      * Create a plain select box
      *
-     * @param  string  $name
-     * @param  array   $list
-     * @param  string  $selected
-     * @param  array   $options
+     * @param  string $name
+     * @param  array $list
+     * @param  string $selected
+     * @param  array $selectAttributes
+     * @param  array $optionsAttributes
      * @return string
      */
-    public function plainSelect($name, $list = array(), $selected = null, $options = array())
+    public function plainSelect($name, $list = array(), $selected = null, array $selectAttributes = [], array $optionsAttributes = [])
     {
-        return parent::select($name, $list, $selected, $options);
+        return parent::select($name, $list, $selected, $selectAttributes, $optionsAttributes);
     }
 
     /**
