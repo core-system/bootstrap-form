@@ -3,9 +3,9 @@
 [![Packagist](https://img.shields.io/packagist/l/core-system/bootstrap-form.svg?maxAge=2592000)](https://packagist.org/packages/core-system/bootstrap-form)
 [![GitHub release](https://img.shields.io/github/release/core-system/bootstrap-form.svg?maxAge=2592000)](https://packagist.org/packages/core-system/bootstrap-form)
 
-This is a standalone part of `core-system` packages for Laravel 5 Framework. 
+This is a standalone part of `core-system` application for Laravel 5 Framework. 
 
-> [CORE-SYSTEM](http://www.core-system.cz) is Laravel 5 based web CMS application 
+> [CORE-SYSTEM](http://www.core-system.cz) is Laravel 5 based application 
 
 CORE-SYSTEM Bootstrap Form contains `laravel-collective/html` extension for simple Twitter Bootstrap 3 form generation and and request validation error handling.
  
@@ -21,23 +21,13 @@ GPL-3.0+
 
 ## Requirements and dependencies
 
-This package uses to installing dependencies `composer` and `bower` component
+This package uses `composer` to installing dependencies
 
 ### Composer
 
 - "php": ">=5.5.9"
-- "laravel/laravel": "~5.0"
-- "laravelcollective/html": "~5.0"
-
-### Bower
-
-- "bootstrap": "~3.3.6"
-
-> If you don't have initialized bower before, run `bower init` command in root directory of your Laravel Framework application. Then run following command to install Twitter Bootstrap 3 and insert into bower.json file 
-
-    $ bower install bootstrap -S
-    
-> **Don't forget include Twitter Bootstrap 3 .js and .css files into your web page layout template**
+- "laravel/laravel": "^5.2"
+- "laravelcollective/html": "^5.0"
 
 ## Installation
 
@@ -49,17 +39,21 @@ Run terminal. Go to your web projects root directory and type following `compose
     
 Open `composer.json` file located in your project folder and add following lines to `require` key
 
+> __For `laravelcollective/html - 5.3` and bellow versions please use `"core-system/bootstrap-form": "1.0.*"` because there is some changes in `laravelcollective/html` API between `5.3` and `5.4` release__ 
+
 ```json
 {
     "require": {
-        "core-system/bootstrap-form": "^1.0.0"
+        "core-system/bootstrap-form": "1.1.*"
     }
 }
 ```
 
 Run `composer update` command
 
-    $ composer update
+```
+$ composer update
+```
     
 Go to your Laravel `config/app.php` and add this line to your `providers` key
 
@@ -75,7 +69,9 @@ and following line to `aliases` key to register Laravel Collective form facade
 
 > If you need you can config control and error class publish vendor config file
 
-    $ php artisan vendor:publish --provider="Core\BootstrapForm\BootstrapFormServiceProvider" --tag="config"
+```
+$ php artisan vendor:publish --provider="Core\BootstrapForm\BootstrapFormServiceProvider" --tag="config"
+```
 
 ## Usage
 
