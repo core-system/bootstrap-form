@@ -18,7 +18,7 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
      * @param  string  $name
      * @param  mixed   $label
      * @param  array   $options
-     * @return string
+     * @return Illuminate\Support\HtmlString
      */
     public function openGroup($name, $label = null, $options = array())
     {
@@ -32,13 +32,13 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
 
         $label = $label ? $this->label($name, $label) : '';
 
-        return '<div'.$this->html->attributes($options).'>'.$label;
+        return $this->toHtmlString('<div'.$this->html->attributes($options).'>'.$label);
     }
 
     /**
      * Close out the opened form group
      *
-     * @return string
+     * @return Illuminate\Support\HtmlString
      */
     public function closeGroup()
     {
@@ -46,7 +46,7 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
 
         $errors = $this->getFormattedErrors($name);
 
-        return $errors.'</div>';
+        return $this->toHtmlString($errors.'</div>');
     }
 
     /**
@@ -56,7 +56,7 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
      * @param  string  $name
      * @param  string  $value
      * @param  array   $options
-     * @return string
+     * @return Illuminate\Support\HtmlString
      */
     public function input($type, $name, $value = null, $options = array())
     {
@@ -73,7 +73,7 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
      * @param  string  $selected
      * @param  array   $selectAttributes
      * @param  array   $optionsAttributes
-     * @return string
+     * @return \Illuminate\Support\HtmlString
      */
     public function select(
         $name,
@@ -94,7 +94,7 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
      * @param  string  $name
      * @param  string  $value
      * @param  array   $options
-     * @return string
+     * @return \Illuminate\Support\HtmlString
      */
     public function plainInput($type, $name, $value = null, $options = array())
     {
@@ -109,7 +109,7 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
      * @param  string $selected
      * @param  array $selectAttributes
      * @param  array $optionsAttributes
-     * @return string
+     * @return \Illuminate\Support\HtmlString
      */
     public function plainSelect($name, $list = array(), $selected = null, array $selectAttributes = [], array $optionsAttributes = [])
     {
@@ -124,7 +124,7 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
      * @param  mixed   $value
      * @param  bool    $checked
      * @param  array   $options
-     * @return string
+     * @return \Illuminate\Support\HtmlString
      */
     protected function checkable($type, $name, $value, $checked, $options)
     {
@@ -141,7 +141,7 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
      * @param  mixed   $label
      * @param  bool    $checked
      * @param  array   $options
-     * @return string
+     * @return \Illuminate\Support\HtmlString
      */
     public function checkbox($name, $value = 1, $label = null, $checked = null, $options = array())
     {
@@ -160,7 +160,7 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
      * @param  mixed   $label
      * @param  bool    $checked
      * @param  array   $options
-     * @return string
+     * @return \Illuminate\Support\HtmlString
      */
     public function radio($name, $value = null, $label = null, $checked = null, $options = array())
     {
@@ -179,7 +179,7 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
      * @param  mixed   $label
      * @param  bool    $checked
      * @param  array   $options
-     * @return string
+     * @return \Illuminate\Support\HtmlString
      */
     public function inlineCheckbox($name, $value = 1, $label = null, $checked = null, $options = array())
     {
@@ -198,7 +198,7 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
      * @param  mixed   $label
      * @param  bool    $checked
      * @param  array   $options
-     * @return string
+     * @return \Illuminate\Support\HtmlString
      */
     public function inlineRadio($name, $value = null, $label = null, $checked = null, $options = array())
     {
@@ -215,7 +215,7 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
      * @param  string  $name
      * @param  string  $value
      * @param  array   $options
-     * @return string
+     * @return \Illuminate\Support\HtmlString
      */
     public function textarea($name, $value = null, $options = array())
     {
@@ -232,7 +232,7 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
      * @param  string  $name
      * @param  string  $value
      * @param  array   $options
-     * @return string
+     * @return \Illuminate\Support\HtmlString
      */
     public function plainTextarea($name, $value = null, $options = array())
     {
@@ -321,11 +321,11 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
      * @param  mixed   $label
      * @param  string  $type
      * @param  string  $checkAble
-     * @return string
+     * @return \Illuminate\Support\HtmlString
      */
     private function wrapCheckable($label, $type, $checkAble)
     {
-        return '<div class="'.$type.'"><label>'.$checkAble.' '.$label.'</label></div>';
+        return $this->toHtmlString('<div class="'.$type.'"><label>'.$checkAble.' '.$label.'</label></div>');
     }
 
     /**
@@ -334,11 +334,11 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
      * @param  mixed   $label
      * @param  string  $type
      * @param  string  $checkAble
-     * @return string
+     * @return \Illuminate\Support\HtmlString
      */
     private function wrapInlineCheckable($label, $type, $checkAble)
     {
-        return '<div class="'.$type.'-inline">'.$checkAble.' '.$label.'</div>';
+        return $this->toHtmlString('<div class="'.$type.'-inline">'.$checkAble.' '.$label.'</div>');
     }
 
 }
