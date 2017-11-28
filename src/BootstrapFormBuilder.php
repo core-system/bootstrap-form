@@ -18,7 +18,7 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
      * @param  string  $name
      * @param  mixed   $label
      * @param  array   $options
-     * @return Illuminate\Support\HtmlString
+     * @return \Illuminate\Support\HtmlString
      */
     public function openGroup($name, $label = null, $options = array())
     {
@@ -38,7 +38,7 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
     /**
      * Close out the opened form group
      *
-     * @return Illuminate\Support\HtmlString
+     * @return \Illuminate\Support\HtmlString
      */
     public function closeGroup()
     {
@@ -56,7 +56,7 @@ class BootstrapFormBuilder extends CollectiveFormBuilder
      * @param  string  $name
      * @param  string  $value
      * @param  array   $options
-     * @return Illuminate\Support\HtmlString
+     * @return \Illuminate\Support\HtmlString
      */
     public function input($type, $name, $value = null, $options = array())
     {
